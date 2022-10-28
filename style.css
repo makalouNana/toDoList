@@ -9,7 +9,6 @@
 p{
     text-decoration: underline;
     padding: 10px;
-
 }
 .toDoList{
     background-color: rgb(8, 8, 80) ;
@@ -21,8 +20,8 @@ p{
 
 
 .max{
-    width: 75%;
-    margin: auto;
+    width: 100%;
+    margin: 10px;
 }
 .entete{
     color: white;
