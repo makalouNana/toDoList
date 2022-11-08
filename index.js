@@ -17,6 +17,7 @@ const tacheRecuperation = (e) =>{
 // Fonction d'ajout d'une tache
 
 const tacheAjout = () =>{
+    if(taskControle()){     
     //
     const tacheList = document.createElement('div')
     allTask.appendChild(tacheList)
@@ -35,9 +36,21 @@ const tacheAjout = () =>{
    trash.innerHTML= `<ion-icon class="trash" name="trash-outline"></ion-icon>`
    tacheList.innerHTML += `<ion-icon name="trash-outline"></ion-icon>`
     //reinitialisation
-
     ajoutInput.value = ""
+    }
+   
 }
+
+//fonction de controle
+
+const taskControle = () =>{
+    if(tache == ""){
+        alert("task no valid")
+        return false;
+    }
+    return true
+}
+
 
 
 
