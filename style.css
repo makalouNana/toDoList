@@ -67,3 +67,9 @@ ion-icon{
 .valider2{
     color: darkgreen;
 }
+
+@media (max-width: 800px){
+    .ajoutInput{
+        width: 300px;
+    }
+}
