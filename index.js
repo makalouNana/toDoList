@@ -37,6 +37,7 @@ const tacheAjout = () =>{
     //Ajout de l'icone delete
     trash = document.createElement('div')
     trash.innerHTML= `<ion-icon class="trash" name="trash-outline"></ion-icon>`
+    trash.style.color = "red"
     tacheList.appendChild(trash)
     //reinitialisation
     ajoutInput.value = ""
@@ -44,7 +45,11 @@ const tacheAjout = () =>{
     }
     trash.addEventListener("click", (e) =>{
         e.target.parentElement.parentElement.remove()
-    } )
+    }) 
+    valider.addEventListener("click", (e) => {
+         e.target.parentElement.parentElement.classList.toggle('valider')  
+         e.target.classList.toggle('valider2')
+    })
 }
 
 //fonction de controle
