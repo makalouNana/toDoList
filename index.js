@@ -31,7 +31,7 @@ const tacheAjout = () =>{
     tacheList.appendChild(valider)
     //Ajout du conteneur de la tach
     toDoInput = document.createElement("input")
-    toDoInput.defaultValue = tache
+    toDoInput.value = tache
     tacheList.appendChild(toDoInput)
     toDoInput.classList.add('ajoutInput')
     //Ajout de l'icone delete
@@ -40,28 +40,31 @@ const tacheAjout = () =>{
     trash.style.color = "red"
     tacheList.appendChild(trash)
     //reinitialisation
-    ajoutInput.value = ""
-    console.log(trash)
+    // ajoutInput.value = ""
     }
-    trash.addEventListener("click", (e) =>{
-        e.target.parentElement.parentElement.remove()
-    }) 
-    valider.addEventListener("click", (e) => {
-         e.target.parentElement.parentElement.classList.toggle('valider')  
-         e.target.classList.toggle('valider2')
-    })
+    trash.addEventListener("click", deleteTask) 
+    valider.addEventListener("click", validTask)
 }
 
 //fonction de controle
 
 const taskControle = () =>{
     console.log("esss")
-    if(tache == ""){
+    if(tache == "" || (tache.toLocaleLowerCase()==tache.toUpperCase())){
         alert("task no valid")
         return false;
     }
     return true
 }
+
+const validTask = (e) => {
+    e.target.parentElement.parentElement.classList.toggle('valider')  
+    e.target.classList.toggle('valider2')
+}
+
+const deleteTask = (e) =>{
+    e.target.parentElement.parentElement.remove()
+} 
 
 
 
